@@ -2,20 +2,21 @@
 
 dateDebut=$(date +%s)
 word=aymane
-timer=20
-read -p "temps restant $timer Entrez le mdp : " mdp
+chrono=5
+timer=$chrono
+mdp=""
 
-while [ "$mdp"!=$word ] && [ $timer -gt 0 ]
+while [ "$mdp" != $word ] && [ $timer -gt 0 ]
 do
 	dateFin=$(date +%s)
-	let "timer = 20 - dateFin + dateDebut"
-	read -p "temps restant $timer Entrez le mdp : " mdp
+	let "timer =  chrono - dateFin + dateDebut"
+	read -t $timer -p "temps restant $timer Entrez le mdp : " mdp
 done
 
-if [ $timer -gt 0 ]
+if [ $timer -le 0 ]
 then
-	echo "Booom !!"
-elif [ "$mdp"==$word ]
+	echo "Boom !!"
+elif [ "$mdp" == $word ]
 then
 	echo "Bravo !"
 else
