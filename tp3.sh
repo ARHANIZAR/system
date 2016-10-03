@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+clear
 dateDebut=$(date +%s)
 word=aymane
 chrono=5
