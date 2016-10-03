@@ -8,7 +8,7 @@ read -p "temps restant $timer Entrez le mdp : " mdp
 while [ "$mdp"!=$word ] && [ $timer -gt 0 ]
 do
 	dateFin=$(date +%s)
-	let "timer = timer - dateFin + dateDebut"
+	let "timer = 20 - dateFin + dateDebut"
 	read -p "temps restant $timer Entrez le mdp : " mdp
 done
 
